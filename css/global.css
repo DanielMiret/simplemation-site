@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --smpl-azul: #0DDAFF;
+  --smpl-verde: #00FF97;
+  --smpl-cinza: #333;
+  --smpl-dark: #24292f;
+  --smpl-white: #eee;
+}
+
+* {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 30px;
+  font-weight: bold;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.simplemation {
+  font-size: 160px;
+  font-weight: 800;
+}
+
+.subtitle {
+  animation: colors-simplemation 2s infinite;
+  -webkit-animation: colors-simplemation 2s infinite;
+  background-color: var(--smpl-white);
+  padding: 10px;
+  border: #eee solid;
+  border-radius: 10px;
+}
+
+.color-green {
+  color: var(--smpl-verde);
+}
+
+.color-blue {
+  color: var(--smpl-azul);
+}
+
+.transition {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.animated {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--smpl-dark);
+    color: var(--smpl-white);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--smpl-white);
+    color: var(--smpl-dark);
+  }
+
+  .subtitle {
+    background-color: var(--smpl-dark) !important;
+    border: var(--smpl-dark) solid !important;
+  }
+}
+
+@keyframes colors-simplemation {
+  0% {
+    color: var(--smpl-verde);
+  }
+
+  50% {
+    color: var(--smpl-azul);
+  }
+
+  100% {
+    color: var(--smpl-verde);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subtitle {
+    animation: colors-simplemation 5s infinite;
+    -webkit-animation: colors-simplemation 5s infinite;
+  }
+}
+
+@media (max-width: 576px) {
+  * {
+    font-size: 15px;
+  }
+
+  .simplemation {
+    font-size: 50px;
+  }
+
+  .subtitle {
+    padding: 5px;
+    border: #eee solid;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  * {
+    font-size: 20px;
+  }
+
+  .simplemation {
+    font-size: 90px;
+  }
+
+  .subtitle {
+    padding: 10px;
+    border: #eee solid;
+    border-radius: 10px;
+  }
+}
